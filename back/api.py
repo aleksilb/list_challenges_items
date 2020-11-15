@@ -19,7 +19,7 @@ def get_top_items():
 
 
 def item_query(query):
-    conn = sqlite3.connect('../Database/listchallenge.db')
+    conn = sqlite3.connect('../listchallenge.db')
     c = conn.cursor()
     c.execute(query)
     items = []

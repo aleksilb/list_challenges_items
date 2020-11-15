@@ -13,7 +13,7 @@ class LcItem(NamedTuple):
 
 
 async def update_items(num: int):
-    conn = sqlite3.connect('../Database/listchallenge.db')
+    conn = sqlite3.connect('../listchallenge.db')
     while True:
         next_id = get_last_id(conn) + 1
         async with aiohttp.ClientSession() as session:

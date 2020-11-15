@@ -1,0 +1,17 @@
+.App {
+  padding: 10px;
+  width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.ui {
+  height: 50px;
+  margin: 10px;
+}
+
+.input {
+  height: 100%;
+  float: left;
+  margin-right: 40px;
+}
