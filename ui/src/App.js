@@ -15,7 +15,7 @@ function App() {
       setItems([]);
     } else {
       setShowTop(true);
-      fetch("http://localhost:5000/top-items")
+      fetch("/api/top-items")
         .then(res => res.json())
         .then(
             (result) => {
@@ -28,7 +28,7 @@ function App() {
     setShowTop(false);
     if(search.length > 2) {
       setSearching(true);
-      fetch("http://localhost:5000/search/" + search)
+      fetch("/api/search/" + search)
           .then(res => res.json())
           .then(
               (result) => {
