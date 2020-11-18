@@ -2,7 +2,7 @@
   "name": "list-challenge-search-ui",
   "version": "0.1.0",
   "private": true,
-  "homepage": "ec2-13-53-130-134.eu-north-1.compute.amazonaws.com",
+  "homepage": "http://ec2-13-53-130-134.eu-north-1.compute.amazonaws.com",
   "dependencies": {
     "@material-ui/core": "^4.11.0",
     "@material-ui/icons": "^4.9.1",
