@@ -1,10 +1,11 @@
 import flask
 import sqlite3
+import os
 from flask import jsonify
 from flask_cors import CORS
 
+here = os.path.dirname(__file__)
 app = flask.Flask(__name__)
-app.config["DEBUG"] = True
 CORS(app)
 
 
@@ -19,7 +20,7 @@ def get_top_items():
 
 
 def item_query(query):
-    conn = sqlite3.connect('../listchallenge.db')
+    conn = sqlite3.connect(os.path.join(here, 'listchallenge.db'))
     c = conn.cursor()
     c.execute(query)
     items = []
@@ -28,4 +29,5 @@ def item_query(query):
     return jsonify(items)
 
 
-app.run()
+if __name__ == "__main__":
+    app.run()
