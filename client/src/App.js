@@ -8,6 +8,13 @@ function App() {
   const [items, setItems] = useState([]);
   const [searching, setSearching] = useState(false);
   const [showTop, setShowTop] = useState(false);
+  let apiDomain = '';
+
+  if(process.env.NODE_ENV === 'development') {
+      apiDomain = 'http://localhost:5000';
+  } else if(process.env.NODE_ENV === 'production') {
+      apiDomain = '/api';
+  }
 
   let toggleTopItems = () => {
     if(showTop) {
@@ -15,7 +22,7 @@ function App() {
       setItems([]);
     } else {
       setShowTop(true);
-      fetch("/api/top-items")
+      fetch(apiDomain + "/top-items")
         .then(res => res.json())
         .then(
             (result) => {
@@ -28,7 +35,7 @@ function App() {
     setShowTop(false);
     if(search.length > 2) {
       setSearching(true);
-      fetch("/api/search/" + search)
+      fetch(apiDomain +"/search/" + search)
           .then(res => res.json())
           .then(
               (result) => {
