@@ -4,6 +4,10 @@ import re
 import sqlite3
 import asyncio
 from typing import NamedTuple
+import os
+
+
+current_dir = os.path.dirname(__file__)
 
 
 class LcItem(NamedTuple):
@@ -13,7 +17,7 @@ class LcItem(NamedTuple):
 
 
 async def update_items(num: int):
-    conn = sqlite3.connect('listchallenge.db')
+    conn = sqlite3.connect(os.path.join(current_dir, 'listchallenge.db'))
     while True:
         next_id = get_last_id(conn) + 1
         async with aiohttp.ClientSession() as session:
