@@ -17,7 +17,7 @@ def search_items(search_string):
 
 @app.route('/top-items', methods=['GET'])
 def get_top_items():
-    return do_item_query("SELECT * FROM item WHERE checked = FALSE ORDER BY lists DESC LIMIT 100")
+    return do_item_query("SELECT * FROM item WHERE checked = 0 ORDER BY lists DESC LIMIT 100")
 
 
 @app.route('/items/<item_id>/check', methods=['PUT'])
