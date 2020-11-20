@@ -59,7 +59,7 @@ def query_db(query, conn):
 
 
 def save_item(item: LcItem, conn):
-    query_db("INSERT INTO item VALUES (" + str(item.item_id) + ",'" + item.name + "'," + str(item.lists) + ")", conn)
+    query_db("INSERT INTO item(id, name, lists, checked) VALUES (" + str(item.item_id) + ",'" + item.name + "'," + str(item.lists) + ", 0)", conn)
 
 
 def get_last_id(conn):
