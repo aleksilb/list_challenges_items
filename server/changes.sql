@@ -1,2 +1,1 @@
-alter table item
-    add checked boolean default false;
+alter table item add checked INTEGER default 0;
