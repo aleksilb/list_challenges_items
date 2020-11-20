@@ -11,7 +11,8 @@ CORS(app)
 
 @app.route('/search/<search_string>', methods=['GET'])
 def search_items(search_string):
-    return do_item_query("SELECT * FROM item WHERE name LIKE '%" + search_string + "%' AND lists > 0 ORDER BY lists DESC")
+    return do_item_query("SELECT * FROM item WHERE name LIKE '%" +
+                         search_string + "%' AND lists > 0 ORDER BY lists DESC LIMIT 100")
 
 
 @app.route('/top-items', methods=['GET'])
